@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.usk83.contacts.ui.add.AddContactViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        tools:context=".ui.add.AddContactFragment">
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/first_last_name"
+            android:text="@={viewModel.name}"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/cellEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone_number"
+            android:text="@={viewModel.cell}"
+            android:inputType="phone"
+            android:maxLength="10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="60dp">
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:textSize="12dp"
+                android:padding="4dp"
+                style="@style/Widget.MaterialComponents.Button"
+                android:onClick="@{() -> viewModel.onCancelClicked()}" />
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/save"
+                android:textSize="12dp"
+                android:padding="4dp"
+                android:enabled="false"
+                style="@style/Widget.MaterialComponents.Button"
+                android:onClick="@{() -> viewModel.onSaveClicked()}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

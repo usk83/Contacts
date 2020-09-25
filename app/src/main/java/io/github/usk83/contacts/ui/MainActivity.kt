@@ -1,7 +1,8 @@
-package io.github.usk83.contacts
+package io.github.usk83.contacts.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import io.github.usk83.contacts.R
 
 class MainActivity : AppCompatActivity() {
 
